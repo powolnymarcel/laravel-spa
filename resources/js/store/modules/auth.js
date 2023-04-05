@@ -181,7 +181,7 @@ export default {
       await axios.get('/sanctum/csrf-cookie');
       const res = await axios.post('/api/register', payload);
       if (
-        res.status == 201 &&
+        (res.status == 201 || res.status == 200) &&
         res &&
         res.data &&
         res.data.user &&
